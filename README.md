@@ -11,6 +11,11 @@ apt update && apt install -y zsh && chsh -s $(which zsh)
 apt update && apt install git curl zip stow
 ```
 
+### SDKMAN!
+```
+curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+
 ### Starship
 ```
 apt install fonts-firacode && curl -fsSL https://starship.rs/install.sh | sh
@@ -19,10 +24,11 @@ apt install fonts-firacode && curl -fsSL https://starship.rs/install.sh | sh
 ### Vim
 ```
 apt install vim && \
-mkdir -p ~/tmp/onedark.vim && git clone https://github.com/joshdick/onedark.vim.git ~/tmp/onedark.vim && \
-mkdir -p ~/.vim/colors && cp ~/tmp/onedark.vim/colors/onedark.vim ~/.vim/colors/ && \
-mkdir -p ~/.vim/autoload && cp ~/tmp/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
-mkdir -p ~/.vim/autoload/lightline/colorscheme && cp ~/tmp/onedark.vim/autoload/lightline/colorscheme/onedark.vim ~/.vim/autoload/lightline/colorscheme/
+mkdir -p ~/.vim/autoload && git clone https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ~/.vim/autoload/ && \
+mkdir -p ~/.vim/plugged/onedark.vim && git clone https://raw.githubusercontent.com/joshdick/onedark.vim.git ~/.vim/plugged/onedark.vim && \
+mkdir -p ~/.vim/colors && cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors/ && \
+cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
+mkdir -p ~/.vim/autoload/lightline/colorscheme && cp ~/.vim/plugged/onedark.vim/autoload/lightline/colorscheme/onedark.vim ~/.vim/autoload/lightline/colorscheme/
 ```
 
 ## Install
