@@ -10,12 +10,6 @@ sudo apt update
 sudo apt install git
 ```
 
-### Stow
-```
-sudo apt update
-sudo apt install stow
-```
-
 ### Curl
 ```
 sudo apt update
@@ -32,6 +26,12 @@ curl -fsSL https://starship.rs/install.sh | bash
 ### SDKMAN!
 ```
 curl -s "https://get.sdkman.io" | bash
+```
+
+### Stow
+```
+sudo apt update
+sudo apt install stow
 ```
 
 ## Install
