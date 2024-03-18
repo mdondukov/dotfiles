@@ -29,6 +29,11 @@ sudo apt install fonts-firacode
 curl -fsSL https://starship.rs/install.sh | bash
 ```
 
+### SDKMAN!
+```
+curl -s "https://get.sdkman.io" | bash
+```
+
 ## Install
 First, check out the dotfiles repo in your $HOME directory using git
 ```
