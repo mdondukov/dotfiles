@@ -5,6 +5,9 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```
+apt update && apt install -y zsh && chsh -s $(which zsh)
+```
+```
 apt update && apt install git curl zip stow
 ```
 
