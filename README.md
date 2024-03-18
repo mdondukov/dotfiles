@@ -23,6 +23,12 @@ sudo apt install fonts-firacode
 curl -fsSL https://starship.rs/install.sh | bash
 ```
 
+### Zip
+```
+sudo apt update
+sudo apt install zip
+```
+
 ### SDKMAN!
 ```
 curl -s "https://get.sdkman.io" | bash
