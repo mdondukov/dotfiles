@@ -37,6 +37,7 @@ set termguicolors
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
