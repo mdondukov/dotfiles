@@ -18,7 +18,7 @@ sudo apt update && sudo apt install git curl stow
 ```
 sudo apt install vim && \
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-mkdir -p ~/.vim/plugged/onedark.vim && git clone https://raw.githubusercontent.com/joshdick/onedark.vim.git ~/.vim/plugged/onedark.vim && \
+mkdir -p ~/.vim/plugged/onedark.vim && git clone https://github.com/joshdick/onedark.vim.git ~/.vim/plugged/onedark.vim && \
 mkdir -p ~/.vim/colors && cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors/ && \
 cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
 mkdir -p ~/.vim/autoload/lightline/colorscheme && cp ~/.vim/plugged/onedark.vim/autoload/lightline/colorscheme/onedark.vim ~/.vim/autoload/lightline/colorscheme/
