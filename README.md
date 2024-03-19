@@ -24,7 +24,7 @@ apt install fonts-firacode && curl -fsSL https://starship.rs/install.sh | sh
 ### Vim
 ```
 apt install vim && \
-mkdir -p ~/.vim/autoload && git clone https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ~/.vim/autoload/ && \
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
 mkdir -p ~/.vim/plugged/onedark.vim && git clone https://raw.githubusercontent.com/joshdick/onedark.vim.git ~/.vim/plugged/onedark.vim && \
 mkdir -p ~/.vim/colors && cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors/ && \
 cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
