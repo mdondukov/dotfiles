@@ -40,5 +40,5 @@ $ git checkout ubuntu
 ```
 then use GNU stow to create symlinks
 ```
-$ stow --adopt .
+$ stow .
 ```
