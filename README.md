@@ -4,9 +4,12 @@ This directory contains the dotfiles for my system
 ## Requirements
 Ensure you have the following installed on your system
 
+### Zsh
 ```
 apt update && apt install -y zsh && chsh -s $(which zsh)
 ```
+
+### Git, Curl, Stow
 ```
 apt update && apt install git curl stow
 ```
