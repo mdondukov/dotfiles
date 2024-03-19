@@ -8,12 +8,7 @@ Ensure you have the following installed on your system
 apt update && apt install -y zsh && chsh -s $(which zsh)
 ```
 ```
-apt update && apt install git curl zip stow
-```
-
-### SDKMAN!
-```
-curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh"
+apt update && apt install git curl stow
 ```
 
 ### Starship
@@ -41,4 +36,24 @@ $ git checkout ubuntu
 then use GNU stow to create symlinks
 ```
 $ stow --adopt .
+```
+in $HOME update zsh
+```
+$ source .zshrc
+```
+open vim and install plugins
+```
+:PlugInstall
+```
+
+## Post-install
+
+### Zip
+```
+apt update && apt install zip
+```
+
+### SDKMAN!
+```
+curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh" --no-modify-profile
 ```
