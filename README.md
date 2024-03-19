@@ -6,22 +6,17 @@ Ensure you have the following installed on your system
 
 ### Zsh
 ```
-apt update && apt install -y zsh && chsh -s $(which zsh)
+sudo apt update && sudo apt install -y zsh && chsh -s $(which zsh)
 ```
 
 ### Git, Curl, Stow
 ```
-apt update && apt install git curl stow
-```
-
-### Starship
-```
-apt install fonts-firacode && curl -fsSL https://starship.rs/install.sh | sh
+sudo apt update && sudo apt install git curl stow
 ```
 
 ### Vim
 ```
-apt install vim && \
+sudo apt install vim && \
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
 mkdir -p ~/.vim/plugged/onedark.vim && git clone https://raw.githubusercontent.com/joshdick/onedark.vim.git ~/.vim/plugged/onedark.vim && \
 mkdir -p ~/.vim/colors && cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors/ && \
@@ -53,7 +48,7 @@ open vim and install plugins
 
 ### Zip
 ```
-apt update && apt install zip
+sudo apt update && sudo apt install zip
 ```
 
 ### SDKMAN!
