@@ -7,6 +7,7 @@ set expandtab
 set softtabstop=2
 set autoindent
 set hlsearch
+set clipboard=unnamed
 
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
