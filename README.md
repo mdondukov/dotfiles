@@ -6,7 +6,7 @@ Ensure you have the following installed on your system
 
 ### Zsh
 ```
-sudo apt update && sudo apt install -y zsh && chsh -s $(which zsh)
+sudo apt update && sudo apt install -y zsh && sudo chsh -s $(which zsh)
 ```
 
 ### Git, Curl, Stow
@@ -29,7 +29,6 @@ First, check out the dotfiles repo in your $HOME directory using git
 ```
 $ git clone https://github.com/mdondukov/dotfiles.git
 $ cd dotfiles
-$ git checkout ubuntu
 ```
 then use GNU stow to create symlinks
 ```
