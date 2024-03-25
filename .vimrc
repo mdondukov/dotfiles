@@ -34,6 +34,7 @@ set fileencodings=utf8,cp1251
 
 set visualbell t_vb=
 set termguicolors
+set term=xterm-256color
 
 call plug#begin()
 
