@@ -24,6 +24,12 @@ cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
 mkdir -p ~/.vim/autoload/lightline/colorscheme && cp ~/.vim/plugged/onedark.vim/autoload/lightline/colorscheme/onedark.vim ~/.vim/autoload/lightline/colorscheme/
 ```
 
+### Tmux
+```
+sudo apt install tmux && \
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ## Install
 First, check out the dotfiles repo in your $HOME directory using git
 ```
