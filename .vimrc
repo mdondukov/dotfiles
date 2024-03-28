@@ -9,6 +9,19 @@ set autoindent
 set hlsearch
 set clipboard=unnamed
 
+" Use a line cursor within insert mode and a block cursor everywhere else.
+"
+" Reference chart of values:
+"   Ps = 0  -> blinking block.
+"   Ps = 1  -> blinking block (default).
+"   Ps = 2  -> steady block.
+"   Ps = 3  -> blinking underline.
+"   Ps = 4  -> steady underline.
+"   Ps = 5  -> blinking bar (xterm).
+"   Ps = 6  -> steady bar (xterm).
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
@@ -34,20 +47,29 @@ set fileencodings=utf8,cp1251
 
 set visualbell t_vb=
 set termguicolors
-set term=xterm-256color
+"set term=xterm-256color
+set t_Co=256
+
+set noshowmode
 
 call plug#begin()
 
+Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'joshdick/onedark.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+"Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
-colorscheme onedark
-
-let g:airline_theme='onedark'
+let g:lightline = {'colorscheme': 'catppuccin_mocha'}
 let g:airline_powerline_fonts = 1
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
+let g:airline_theme = 'catppuccin_mocha'
+
+colorscheme catppuccin_mocha
+
+"let g:airline_theme='onedark'
+"let g:airline_powerline_fonts = 1
+"let g:lightline = {
+"  \ 'colorscheme': 'onedark',
+"  \ }
 
