@@ -47,7 +47,7 @@ set fileencodings=utf8,cp1251
 
 set visualbell t_vb=
 set termguicolors
-"set term=xterm-256color
+set term=xterm-256color
 set t_Co=256
 
 set noshowmode
