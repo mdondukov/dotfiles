@@ -7,6 +7,9 @@ fi
 
 autoload -Uz compinit && compinit
 
+alias vim='nvim'
+alias dc='docker compose'
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
