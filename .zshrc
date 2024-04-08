@@ -7,7 +7,7 @@ fi
 
 autoload -Uz compinit && compinit
 
-alias vim='nvim'
+# alias vim='nvim'
 alias dc='docker compose'
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
