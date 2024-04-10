@@ -53,7 +53,7 @@ source .zshrc
 ### Neovim
 External Requirements
 ```
-sudo apt install make zip unzip gcc ripgrep
+sudo apt install make unzip gcc ripgrep
 ```
 Install Neovim
 ```
