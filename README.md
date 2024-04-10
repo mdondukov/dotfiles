@@ -19,12 +19,12 @@ echo $SHELL
 
 ### Git
 ```
-sudo apt update && sudo apt install git
+sudo apt install git
 ```
 
 ### Stow
 ```
-sudo apt update && sudo apt install stow
+sudo apt install stow
 ```
 
 ### Tmux
@@ -41,7 +41,7 @@ cd dotfiles
 ```
 then use GNU stow to create symlinks
 ```
-stow --adopt .
+stow .
 ```
 in $HOME update zsh
 ```
@@ -53,7 +53,6 @@ source .zshrc
 ### Neovim
 External Requirements
 ```
-sudo apt update && \
 sudo apt install make zip unzip gcc ripgrep
 ```
 Install Neovim
@@ -73,15 +72,16 @@ nvim
 
 ### Fzf
 ```
-sudo apt update && sudo apt install fzf
+sudo apt install fzf
 ```
 
 ### SDKMan
 External Requirements
 ```
-sudo apt update && sudo apt install zip curl
+sudo apt install zip curl
 ```
 Install SDKMan
 ```
-curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh" --no-modify-profile
+curl -s "https://get.sdkman.io" | \
+bash && source "$HOME/.sdkman/bin/sdkman-init.sh" --no-modify-profile
 ```
