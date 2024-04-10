@@ -6,22 +6,25 @@ Ensure you have the following installed on your system
 
 ### Zsh
 ```
-sudo apt update && sudo apt install -y zsh && sudo chsh -s $(which zsh)
+sudo apt update && sudo apt install -y zsh
+```
+Set zsh as default shell
+```
+sudo chsh -s $(which zsh)
+```
+Check shell
+```
+echo $SHELL
 ```
 
-### Git, Curl, Stow
+### Git
 ```
-sudo apt update && sudo apt install git curl stow
+sudo apt install git
 ```
 
-### Vim
+### Stow
 ```
-sudo apt install vim && \
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-mkdir -p ~/.vim/plugged/onedark.vim && git clone https://github.com/joshdick/onedark.vim.git ~/.vim/plugged/onedark.vim && \
-mkdir -p ~/.vim/colors && cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors/ && \
-cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
-mkdir -p ~/.vim/autoload/lightline/colorscheme && cp ~/.vim/plugged/onedark.vim/autoload/lightline/colorscheme/onedark.vim ~/.vim/autoload/lightline/colorscheme/
+sudo apt install stow
 ```
 
 ### Tmux
@@ -30,33 +33,55 @@ sudo apt install tmux && \
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## Install
+## Installation
 First, check out the dotfiles repo in your $HOME directory using git
 ```
-$ git clone https://github.com/mdondukov/dotfiles.git
-$ cd dotfiles
+git clone https://github.com/mdondukov/dotfiles.git && \
+cd dotfiles
 ```
 then use GNU stow to create symlinks
 ```
-$ stow --adopt .
+stow .
 ```
 in $HOME update zsh
 ```
-$ source .zshrc
-```
-open vim and install plugins
-```
-:PlugInstall
+source .zshrc
 ```
 
-## Post-install
+## Post Installation
 
-### Zip
+### Neovim
+External Requirements
 ```
-sudo apt update && sudo apt install zip
+sudo apt install make unzip gcc ripgrep
+```
+Install Neovim
+```
+sudo add-apt-repository ppa:neovim-ppa/unstable && \
+sudo apt-get update && \
+sudo apt-get install neovim
+```
+Install kickstart
+```
+git clone https://github.com/mdondukov/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+```
+Start Neovim
+```
+nvim
 ```
 
-### SDKMAN!
+### Fzf
 ```
-curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh" --no-modify-profile
+sudo apt install fzf
+```
+
+### SDKMan
+External Requirements
+```
+sudo apt install zip curl
+```
+Install SDKMan
+```
+curl -s "https://get.sdkman.io" | \
+bash && source "$HOME/.sdkman/bin/sdkman-init.sh" --no-modify-profile
 ```
