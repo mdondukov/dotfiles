@@ -34,7 +34,7 @@ brew "kubernetes-cli"          # kubectl (used in .zshrc)
 # ============================================================================
 
 # Python
-brew "python@3.13"             # Python 3.13
+brew "python"                  # Latest stable Python from Homebrew
 brew "poetry"                  # Python dependency management
 brew "uv"                      # Fast Python package installer
 
@@ -43,6 +43,7 @@ brew "kotlin"                  # Kotlin language
 brew "kotlin-language-server"  # Kotlin LSP for Neovim
 
 # Go
+brew "go"                      # Go toolchain required for go_install entries
 brew "golangci-lint"           # Go linter
 
 # ============================================================================

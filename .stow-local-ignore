@@ -1,0 +1,6 @@
+# Ignore repo metadata and docs when stowing the entire tree
+.git/
+.gitignore
+.stow-local-ignore
+README.md
+Brewfile

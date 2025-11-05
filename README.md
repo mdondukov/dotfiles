@@ -50,7 +50,7 @@ brew bundle
 This installs:
 - CLI tools: `fzf`, `zoxide`, `neovim`, `git`, `curl`
 - Development tools: `kubectl`, `tig`, `stow`
-- Programming languages: Python 3.13, Kotlin, Go tooling
+- Programming languages: Go toolchain, Python (latest via Homebrew), Kotlin (plus Go tooling helpers)
 - Terminal emulators: `ghostty`, `wezterm`
 - Fonts: JetBrains Mono Nerd Font, Meslo LG Nerd Font
 
@@ -59,6 +59,8 @@ Create symlinks using Stow:
 ```bash
 stow .
 ```
+
+The repo includes `.stow-local-ignore`, so running `stow .` safely skips repository metadata (`.git`, `README.md`, etc.) and only symlinks actual configuration files. Update that ignore list if you add new files that should stay local.
 
 Reload your shell:
 
