@@ -139,27 +139,30 @@ The muscle memory of seeing code in the same colors locally and on GitHub speeds
 
 ## Terminal
 
-I use two GPU-accelerated terminal emulators, both configured with GitHub Dark theme:
+I primarily use [Ghostty](https://ghostty.org/) as my main terminal, with [WezTerm](https://wezfurlong.org/wezterm/) as a powerful alternative.
 
 ### Ghostty
 
-Modern, native macOS terminal with minimal configuration:
+My daily driver terminal. What makes Ghostty special:
 
-```
-theme = GitHub Dark Default
-font-family = "JetBrainsMono Nerd Font"
-font-size = 17.0
-cursor-style = bar
-```
+- **Exceptional font rendering**: Native macOS CoreText rendering with perfect subpixel anti-aliasing. Fonts look crisp and readable at any size.
+- **Blazingly fast**: GPU-accelerated rendering with minimal latency
+- **Native feel**: True macOS app that respects system conventions
+- **Minimal configuration**: Works great out of the box, configure only what you need
+
+Ghostty hits the sweet spot between performance and polish - it's fast enough to feel instant, yet fonts render beautifully.
 
 ### WezTerm
 
-Cross-platform GPU terminal with multiplexer capabilities:
+A powerful cross-platform alternative with advanced features:
 
-- Color scheme: GitHub Dark
-- Font: JetBrainsMono Nerd Font with ligatures
-- WebGPU rendering backend
-- macOS window blur effect
+- **Extremely fast**: Even faster than Ghostty in raw performance
+- **Built-in multiplexer**: No need for tmux or screen
+- **GPU-accelerated**: Uses WebGPU for rendering
+- **Lua configuration**: Programmable terminal with full scripting support
+- **Cross-platform**: Same config works on macOS, Linux, and Windows
+
+WezTerm is ideal for complex workflows requiring split panes and multiplexing, or when you need the absolute fastest terminal available.
 
 ## Editor
 
