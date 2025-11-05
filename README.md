@@ -9,39 +9,48 @@ This directory contains the dotfiles for my macOS system.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Zsh
-Zsh comes pre-installed on macOS. Make sure it's your default shell:
-```bash
-chsh -s $(which zsh)
-```
-
 ### Git
+If not already installed:
 ```bash
 brew install git
 ```
 
-### Stow
-```bash
-brew install stow
-```
-
 ## Installation
 
-1. Clone the dotfiles repo in your $HOME directory:
+### Quick Start (Recommended)
+
+1. Clone the dotfiles repo:
 ```bash
 git clone https://github.com/mdondukov/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-2. Use GNU stow to create symlinks:
+2. Install all packages and applications via Brewfile:
+```bash
+brew bundle
+```
+
+This will install:
+- CLI tools (fzf, zoxide, neovim, etc.)
+- Development tools (kubectl, tig, stow)
+- Programming languages (Python, Kotlin, Go tooling)
+- GUI applications (ghostty, wezterm, codex)
+- Fonts (Nerd Fonts)
+- Go development packages for Neovim
+
+3. Create symlinks with Stow:
 ```bash
 stow .
 ```
 
-3. Reload your shell:
+4. Reload your shell:
 ```bash
 source ~/.zshrc
 ```
+
+### Manual Installation
+
+If you prefer to install packages manually, check the `Brewfile` for the complete list of packages.
 
 ## Post Installation
 
@@ -58,30 +67,21 @@ p10k configure
 ```
 
 ### FZF
+Complete the FZF installation with shell integration:
 ```bash
-brew install fzf
 $(brew --prefix)/opt/fzf/install
 ```
 
-### Zoxide
-```bash
-brew install zoxide
-```
-
-### NVM (Node Version Manager)
+### Optional: NVM (Node Version Manager)
+If you need Node.js:
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ```
 
-### SDKMan
+### Optional: SDKMan
+If you need Java/Kotlin SDK management:
 ```bash
 curl -s "https://get.sdkman.io" | bash
-```
-
-### Neovim
-If you want to use Neovim with your config:
-```bash
-brew install neovim ripgrep
 ```
 
 ## Updating
@@ -92,8 +92,29 @@ cd ~/dotfiles
 git pull
 ```
 
+## Managing Packages
+
+### Update installed packages
+```bash
+cd ~/dotfiles
+brew bundle
+```
+
+### Generate new Brewfile (snapshot current system)
+```bash
+cd ~/dotfiles
+brew bundle dump --force --describe
+```
+
+### Check what would be installed
+```bash
+cd ~/dotfiles
+brew bundle check
+```
+
 ## Notes
 
 - Old Linux-based configuration is archived in the `archive-linux-2024` branch
 - The `.zshrc` includes zinit for plugin management
 - Powerlevel10k configuration is stored in `~/.p10k.zsh` (not tracked in this repo)
+- All packages are managed via `Brewfile` for easy reproducibility
