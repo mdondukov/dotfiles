@@ -19,13 +19,11 @@ brew install git
 
 ### Quick Start (Recommended)
 
-1. Clone the dotfiles repo with submodules:
+1. Clone the dotfiles repo:
 ```bash
-git clone --recurse-submodules https://github.com/mdondukov/dotfiles.git ~/dotfiles
+git clone https://github.com/mdondukov/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
-
-> **Note:** `--recurse-submodules` automatically clones the Neovim configuration (kickstart.nvim fork)
 
 2. Install all packages and applications via Brewfile:
 ```bash
@@ -88,20 +86,10 @@ curl -s "https://get.sdkman.io" | bash
 
 ## Updating
 
-### Update dotfiles and submodules
+To pull the latest changes:
 ```bash
 cd ~/dotfiles
-git pull --recurse-submodules
-```
-
-### Update only Neovim config
-```bash
-cd ~/.config/nvim
-git pull origin dev
-cd ~/dotfiles
-git add .config/nvim
-git commit -m "Update nvim config"
-git push
+git pull
 ```
 
 ## Managing Packages
@@ -124,47 +112,17 @@ cd ~/dotfiles
 brew bundle check
 ```
 
-## Neovim Configuration
+## Optional: Neovim Configuration
 
-The Neovim configuration is managed as a **git submodule** pointing to my [kickstart.nvim fork](https://github.com/mdondukov/kickstart.nvim).
+I use a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) for my Neovim configuration. It's maintained in a separate repository to keep the dotfiles flexible.
 
-### Working with Neovim config
-
-Since it's a submodule, you can work with it independently:
+If you want to use my Neovim configuration:
 
 ```bash
-# Make changes to nvim config
-cd ~/.config/nvim
-# Edit files, commit changes
-git add .
-git commit -m "Add new plugin"
-git push origin dev
+git clone -b dev https://github.com/mdondukov/kickstart.nvim.git ~/.config/nvim
 ```
 
-### Syncing with official kickstart.nvim
-
-To merge updates from the official kickstart repository:
-
-```bash
-cd ~/.config/nvim
-git remote add upstream https://github.com/nvim-lua/kickstart.nvim.git
-git fetch upstream
-git merge upstream/master
-git push origin dev
-
-# Update submodule reference in dotfiles
-cd ~/dotfiles
-git add .config/nvim
-git commit -m "Sync nvim with upstream kickstart"
-git push
-```
-
-### If you forgot --recurse-submodules during clone
-
-```bash
-cd ~/dotfiles
-git submodule update --init --recursive
-```
+> **Note:** This is completely optional. Feel free to use your own Neovim configuration or skip this step entirely.
 
 ## Notes
 
@@ -172,4 +130,4 @@ git submodule update --init --recursive
 - The `.zshrc` includes zinit for plugin management
 - Powerlevel10k configuration is stored in `~/.p10k.zsh` (not tracked in this repo)
 - All packages are managed via `Brewfile` for easy reproducibility
-- Neovim config is a git submodule from [mdondukov/kickstart.nvim](https://github.com/mdondukov/kickstart.nvim)
+- Neovim configuration is kept separate for flexibility - see "Optional: Neovim Configuration" section
