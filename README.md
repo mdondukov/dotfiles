@@ -16,7 +16,7 @@ This repository contains configuration for:
 These dotfiles follow several key principles:
 
 - **Minimalism**: Only include what I actually use
-- **Modularity**: Keep configurations separate and optional (e.g., Neovim config is not included)
+- **Modularity**: Keep configurations separate and optional
 - **Reproducibility**: Use `Brewfile` to declare all dependencies explicitly
 - **Public by default**: Share configurations that might help others, without forcing my entire setup
 
@@ -295,10 +295,8 @@ The `.zshrc` sources local files if they exist:
 
 ## Notes
 
-- Old Linux-based configuration is archived in the `archive-linux-2024` branch
 - Powerlevel10k configuration is machine-specific and not tracked
 - All system packages are declared in `Brewfile` for reproducibility
-- Neovim configuration is maintained separately for flexibility
 
 ## License
 
