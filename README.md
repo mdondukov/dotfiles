@@ -73,10 +73,34 @@ I use `zsh` with [`zinit`](https://github.com/zdharma-continuum/zinit) for fast 
 ### Features
 
 - **Prompt**: [`powerlevel10k`](https://github.com/romkatv/powerlevel10k) - fast and customizable prompt
-- **Fuzzy finding**: [`fzf`](https://github.com/junegunn/fzf) - command-line fuzzy finder
 - **Smart navigation**: [`zoxide`](https://github.com/ajeetdsouza/zoxide) - smarter `cd` command
 - **Syntax highlighting**: [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting)
 - **Autosuggestions**: [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
+
+### FZF - Fuzzy Finder
+
+[`fzf`](https://github.com/junegunn/fzf) is a game-changer for command-line productivity. It's a general-purpose fuzzy finder that integrates into shell workflows.
+
+Key capabilities:
+- **History search**: `Ctrl-R` for interactive command history with preview
+- **File navigation**: `Ctrl-T` to fuzzy-find files in current directory
+- **Directory jumping**: `Alt-C` to quickly change directories
+- **Git integration**: Fuzzy-find branches, commits, and files in git repos
+- **Any list filtering**: Pipe any output to `fzf` for interactive selection
+
+Example workflow:
+```bash
+# Find and edit a file
+vim $(fzf)
+
+# Kill a process interactively
+kill -9 $(ps aux | fzf | awk '{print $2}')
+
+# Checkout a git branch
+git checkout $(git branch | fzf)
+```
+
+If you're not using fzf yet, install it - it will change how you work in the terminal.
 
 ### Plugins
 
@@ -101,9 +125,21 @@ Complete the FZF installation with shell integration:
 $(brew --prefix)/opt/fzf/install
 ```
 
+## Color scheme
+
+I use [GitHub Dark](https://github.com/projekt0n/github-nvim-theme) theme consistently across all tools: terminals, Neovim, and VS Code (when needed).
+
+This provides several benefits:
+- **Consistency**: Same colors everywhere reduce cognitive load
+- **GitHub integration**: Matches GitHub's UI, making code reviews and PR navigation seamless
+- **Well-designed**: Carefully crafted color palette optimized for readability
+- **Maintained**: Part of GitHub's design system, stays up-to-date
+
+The muscle memory of seeing code in the same colors locally and on GitHub speeds up development and code review workflows.
+
 ## Terminal
 
-I use two GPU-accelerated terminal emulators:
+I use two GPU-accelerated terminal emulators, both configured with GitHub Dark theme:
 
 ### Ghostty
 
@@ -127,13 +163,40 @@ Cross-platform GPU terminal with multiplexer capabilities:
 
 ## Editor
 
-I use Neovim with a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
+I use [Neovim](https://neovim.io/) as my primary editor. Not an IDE - an editor.
+
+### Why Neovim over IDEs?
+
+**Philosophy**: I don't need an IDE. I need a great editor that follows Unix philosophy - do one thing well. Neovim excels at editing text, and I compose it with other Unix tools (grep, find, git, etc.) to build my development environment.
+
+**Freedom**: With Neovim and plugins like Telescope, LSP, and Treesitter, I get:
+- Blazing fast fuzzy finding across files, buffers, and grep results
+- Language server protocol support for any language
+- Precise text manipulation with vim motions
+- Complete control over my environment
+- No vendor lock-in or proprietary formats
+
+**Customization**: Every keybinding, every behavior, every feature is under my control. The editor adapts to my workflow, not the other way around.
+
+### Why Kickstart?
+
+I use [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) as a foundation because:
+- **Minimal but complete**: Good defaults without bloat
+- **Educational**: Well-commented configuration teaches Neovim concepts
+- **Starting point**: Easy to understand and extend with custom configurations
+- **Maintained**: Stays up-to-date with Neovim best practices
+
+My fork at [mdondukov/kickstart.nvim](https://github.com/mdondukov/kickstart.nvim) includes my personal customizations on top of kickstart's solid foundation.
+
+### Installation
 
 This configuration is **not included** in this repository to keep the dotfiles flexible. Install it separately if you want:
 
 ```bash
 git clone -b dev https://github.com/mdondukov/kickstart.nvim.git ~/.config/nvim
 ```
+
+Both Neovim and kickstart are configured with GitHub Dark theme for consistency.
 
 ## Optional tools
 
@@ -147,13 +210,40 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
 ### SDKMan
 
-For Java/Kotlin SDK management:
+[SDKMan](https://sdkman.io/) is essential for JVM development (Java, Kotlin, Scala, Groovy).
 
+**Why it's crucial**: Different projects often require different JVM versions. SDKMan makes it trivial to:
+- Install and switch between multiple Java versions (8, 11, 17, 21, etc.)
+- Manage build tools (Gradle, Maven) per-project
+- Install JVM languages (Kotlin, Scala) and tools
+- Use different versions in different terminal sessions
+
+Example workflow:
+```bash
+# Install Java 21
+sdk install java 21.0.1-tem
+
+# Install Java 17 for older projects
+sdk install java 17.0.9-tem
+
+# Switch Java version in current shell
+sdk use java 17.0.9-tem
+
+# Set default Java version
+sdk default java 21.0.1-tem
+
+# Install Gradle
+sdk install gradle 8.5
+```
+
+This solves the "works on my machine" problem when different projects require different JVM tooling.
+
+Installation:
 ```bash
 curl -s "https://get.sdkman.io" | bash
 ```
 
-Both tools are loaded in `.zshrc` if present.
+Both NVM and SDKMan are loaded in `.zshrc` if present.
 
 ## Managing packages
 
