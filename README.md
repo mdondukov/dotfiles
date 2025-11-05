@@ -19,11 +19,13 @@ brew install git
 
 ### Quick Start (Recommended)
 
-1. Clone the dotfiles repo:
+1. Clone the dotfiles repo with submodules:
 ```bash
-git clone https://github.com/mdondukov/dotfiles.git ~/dotfiles
+git clone --recurse-submodules https://github.com/mdondukov/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
+
+> **Note:** `--recurse-submodules` automatically clones the Neovim configuration (kickstart.nvim fork)
 
 2. Install all packages and applications via Brewfile:
 ```bash
@@ -86,10 +88,20 @@ curl -s "https://get.sdkman.io" | bash
 
 ## Updating
 
-To pull the latest changes:
+### Update dotfiles and submodules
 ```bash
 cd ~/dotfiles
-git pull
+git pull --recurse-submodules
+```
+
+### Update only Neovim config
+```bash
+cd ~/.config/nvim
+git pull origin dev
+cd ~/dotfiles
+git add .config/nvim
+git commit -m "Update nvim config"
+git push
 ```
 
 ## Managing Packages
@@ -112,9 +124,52 @@ cd ~/dotfiles
 brew bundle check
 ```
 
+## Neovim Configuration
+
+The Neovim configuration is managed as a **git submodule** pointing to my [kickstart.nvim fork](https://github.com/mdondukov/kickstart.nvim).
+
+### Working with Neovim config
+
+Since it's a submodule, you can work with it independently:
+
+```bash
+# Make changes to nvim config
+cd ~/.config/nvim
+# Edit files, commit changes
+git add .
+git commit -m "Add new plugin"
+git push origin dev
+```
+
+### Syncing with official kickstart.nvim
+
+To merge updates from the official kickstart repository:
+
+```bash
+cd ~/.config/nvim
+git remote add upstream https://github.com/nvim-lua/kickstart.nvim.git
+git fetch upstream
+git merge upstream/master
+git push origin dev
+
+# Update submodule reference in dotfiles
+cd ~/dotfiles
+git add .config/nvim
+git commit -m "Sync nvim with upstream kickstart"
+git push
+```
+
+### If you forgot --recurse-submodules during clone
+
+```bash
+cd ~/dotfiles
+git submodule update --init --recursive
+```
+
 ## Notes
 
 - Old Linux-based configuration is archived in the `archive-linux-2024` branch
 - The `.zshrc` includes zinit for plugin management
 - Powerlevel10k configuration is stored in `~/.p10k.zsh` (not tracked in this repo)
 - All packages are managed via `Brewfile` for easy reproducibility
+- Neovim config is a git submodule from [mdondukov/kickstart.nvim](https://github.com/mdondukov/kickstart.nvim)
