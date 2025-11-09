@@ -14,6 +14,7 @@ tap "wez/wezterm"
 brew "curl"                    # HTTP client
 brew "fzf"                     # Fuzzy finder (used in .zshrc)
 brew "git"                     # Version control (newer than macOS default)
+brew "ripgrep"                 # Fast search tool (used in Neovim)
 brew "zoxide"                  # Smart directory navigation (used in .zshrc)
 brew "zip"                     # Archive utility
 
@@ -40,7 +41,6 @@ brew "uv"                      # Fast Python package installer
 
 # Kotlin
 brew "kotlin"                  # Kotlin language
-brew "kotlin-language-server"  # Kotlin LSP for Neovim
 
 # Go
 brew "go"                      # Go toolchain required for go_install entries
