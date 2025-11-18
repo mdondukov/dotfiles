@@ -33,6 +33,7 @@ zinit snippet OMZP::sudo
 
 # Homebrew command-not-found handler (for macOS)
 if command -v brew &>/dev/null; then
+  export HOMEBREW_NO_AUTO_UPDATE=1
   eval "$(brew command-not-found-init)"
 fi
 
