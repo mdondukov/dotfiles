@@ -10,7 +10,7 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'cormacrelf/vim-colors-github'
+Plug 'vv9k/vim-github-dark'
 call plug#end()
 
 filetype plugin indent on
