@@ -10,7 +10,7 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'projekt0n/github-nvim-theme'
+Plug 'cormacrelf/vim-colors-github'
 call plug#end()
 
 filetype plugin indent on
@@ -23,7 +23,7 @@ endif
 
 " Set colorscheme
 set background=dark
-colorscheme github_dark
+colorscheme ghdark
 
 " Display
 set ruler
