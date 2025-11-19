@@ -1,14 +1,35 @@
 " Minimal Vim Configuration for Server
 set nocompatible
+
+" Auto-install vim-plug if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'projekt0n/github-nvim-theme'
+call plug#end()
+
 filetype plugin indent on
 syntax on
+
+" Enable TrueColor support
+if has('termguicolors')
+  set termguicolors
+endif
+
+" Set colorscheme
+set background=dark
+colorscheme github_dark
 
 " Display
 set ruler
 set showcmd
 set laststatus=2
 set nowrap
-set background=dark
 
 " Cursor shapes for different modes
 let &t_SI = "\e[6 q"  " INSERT mode - vertical bar (thin line)
