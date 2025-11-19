@@ -23,7 +23,7 @@ endif
 
 " Set colorscheme
 set background=dark
-colorscheme ghdark
+silent! colorscheme ghdark
 
 " Display
 set ruler
