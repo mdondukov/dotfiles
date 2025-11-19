@@ -4,12 +4,16 @@ filetype plugin indent on
 syntax on
 
 " Display
-set number
 set ruler
 set showcmd
 set laststatus=2
 set nowrap
 set background=dark
+
+" Cursor shapes for different modes
+let &t_SI = "\e[6 q"  " INSERT mode - vertical bar (thin line)
+let &t_EI = "\e[2 q"  " NORMAL mode - block
+let &t_SR = "\e[4 q"  " REPLACE mode - underline
 
 " Search
 set incsearch
