@@ -223,12 +223,23 @@ vnoremap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" Copy to system clipboard
-vnoremap <leader>y "+y
-nnoremap <leader>Y "+yg_
-nnoremap <leader>yy "+yy
+" ============================================
+" OSC 52 Clipboard Support (works over SSH!)
+" ============================================
+" OSC 52 copy function - sends text to local terminal clipboard via escape codes
+function! Osc52Yank()
+    let buffer=system('base64 -w0', @0)
+    let buffer=substitute(buffer, "\n$", "", "")
+    let buffer='\e]52;c;'.buffer.'\x07'
+    silent exe "!echo -ne ".shellescape(buffer)." > ".shellescape('/dev/tty')
+endfunction
 
-" Paste from system clipboard
+" Copy to system clipboard using OSC 52
+vnoremap <leader>y y:call Osc52Yank()<CR>
+nnoremap <leader>Y yg_:call Osc52Yank()<CR>
+nnoremap <leader>yy yy:call Osc52Yank()<CR>
+
+" Paste from system clipboard (requires terminal support)
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
