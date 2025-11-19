@@ -15,6 +15,7 @@ brew "curl"                    # HTTP client
 brew "fzf"                     # Fuzzy finder (used in .zshrc)
 brew "git"                     # Version control (newer than macOS default)
 brew "ripgrep"                 # Fast search tool (used in Neovim)
+brew "tree"                    # Directory tree visualization
 brew "zoxide"                  # Smart directory navigation (used in .zshrc)
 brew "zip"                     # Archive utility
 
