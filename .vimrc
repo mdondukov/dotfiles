@@ -71,12 +71,20 @@ nnoremap <leader>bd :bdelete<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" OSC 52 Clipboard (works over SSH!)
+" OSC 52 Clipboard (works over SSH and inside tmux!)
 function! Osc52Yank()
     let buffer=system('base64 -w0', @0)
     let buffer=substitute(buffer, "\n$", "", "")
-    let osc52="\033]52;c;".buffer."\033\\"
-    call system('printf "'.osc52.'" > /dev/tty')
+    let buffer='\033]52;c;'.buffer.'\033\\'
+
+    " Check if we're inside tmux
+    if $TMUX != ''
+        " Wrap in tmux passthrough
+        let buffer = '\033Ptmux;\033'.buffer.'\033\\'
+    endif
+
+    " Send to terminal
+    silent exe "!printf '".buffer."' > /dev/tty"
     redraw!
 endfunction
 
