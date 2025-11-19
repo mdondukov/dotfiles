@@ -86,5 +86,10 @@ nnoremap <leader>yy yy:call Osc52Yank()<CR>
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 
+" Toggle paste mode (fixes indentation when pasting)
+set pastetoggle=<F2>
+nnoremap <leader>v :set paste<CR>i
+nnoremap <leader>V :set nopaste<CR>
+
 " Status line
 set statusline=\ %f\ %m%=%y\ %p%%\ %l:%c\
