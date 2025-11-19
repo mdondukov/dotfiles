@@ -36,6 +36,13 @@ let &t_SI = "\e[6 q"  " INSERT mode - vertical bar (thin line)
 let &t_EI = "\e[2 q"  " NORMAL mode - block
 let &t_SR = "\e[4 q"  " REPLACE mode - underline
 
+" Force block cursor on startup
+augroup cursor_shape
+  autocmd!
+  autocmd VimEnter * silent !echo -ne "\e[2 q"
+  autocmd VimLeave * silent !echo -ne "\e[6 q"
+augroup END
+
 " Search
 set incsearch
 set hlsearch
