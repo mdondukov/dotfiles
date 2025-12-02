@@ -78,6 +78,25 @@ I use `zsh` with [`zinit`](https://github.com/zdharma-continuum/zinit) for fast 
 - **Smart navigation**: [`zoxide`](https://github.com/ajeetdsouza/zoxide) - smarter `cd` command
 - **Syntax highlighting**: [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting)
 - **Autosuggestions**: [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
+- **Vi mode**: Native `bindkey -v` for vim-like command line editing
+
+### Vi Mode
+
+Vi mode brings the power of vim motions to your shell. Instead of emacs-style editing (default in most shells), you get the precision and efficiency of vi commands for editing long command lines.
+
+**How it works:**
+- Type normally in insert mode
+- Press `Esc` to switch to normal mode
+- Use vim motions: `0`/`$` for line start/end, `w`/`b` for word navigation, `dw`/`x` for deletion
+- Press `i` or `a` to return to insert mode
+
+**Why this matters:** When you discover an error in a long command you've typed, instead of spamming backspace or using arrow keys, you can jump to the error with a few keystrokes and fix it. It's the same power you already have in vim, now available in your shell.
+
+**Ghostty integration:** Ghostty's dynamic cursor automatically changes to reflect your mode:
+- Blinking bar in insert mode
+- Solid block in normal mode
+
+This visual feedback makes mode switching feel natural and eliminates guessing.
 
 ### FZF - Fuzzy Finder
 
@@ -111,7 +130,6 @@ Oh My Zsh plugins loaded via zinit snippets:
 - `tig` - Git TUI integration
 - `docker` and `docker-compose` - Docker completions
 - `kubectl` and `kubectx` - Kubernetes tooling
-- `sudo` - Press ESC twice to prefix command with sudo
 
 ### First run setup
 

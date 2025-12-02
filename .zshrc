@@ -9,6 +9,9 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 setopt AUTO_CD
 
+# Enable vi mode for command line editing
+bindkey -v
+
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 source ~/.zinit/bin/zinit.zsh
@@ -21,7 +24,6 @@ zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
-zinit snippet OMZP::sudo
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
