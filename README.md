@@ -114,12 +114,33 @@ Example workflow:
 # Find and edit a file
 vim $(fzf)
 
+# Find and edit with file preview
+nvim $(fzf --preview='cat {}')
+
+# Find and edit multiple files
+nvim $(fzf -m --preview='cat {}')
+
 # Kill a process interactively
 kill -9 $(ps aux | fzf | awk '{print $2}')
 
-# Checkout a git branch
-git checkout $(git branch | fzf)
+# Checkout a git branch with recent commits preview
+git checkout $(git branch -a | fzf --preview='git log {1} --oneline -5')
+
+# View git commit history with diff preview
+git log --oneline | fzf --preview='git show {1}'
+
+# Search files by content and preview them
+rg --files-with-matches "pattern" | fzf --preview='cat {}'
+
+# Quick directory navigation with file listing preview
+cd $(find . -type d | fzf --preview='ls -lah {}')
 ```
+
+**Advanced tips:**
+- **`-m` flag**: Select multiple items at once (useful for editing several files)
+- **`{}`**: References the selected line
+- **`{1}`, `{2}`**: References specific fields from the selected line
+- **`--preview`**: Shows a live preview as you navigate
 
 If you're not using fzf yet, install it - it will change how you work in the terminal.
 
