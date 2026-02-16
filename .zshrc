@@ -58,7 +58,7 @@ fpath=(/Users/max/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 
-alias claude="/Users/max/.claude/local/claude"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="$HOME/.local/bin:$PATH"

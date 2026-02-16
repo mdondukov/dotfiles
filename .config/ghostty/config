@@ -2,8 +2,18 @@ theme = GitHub Dark Default
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 18.0
+font-feature = calt
+font-feature = liga
+font-thicken = true
+font-thicken-strength = 150
+
+adjust-cell-height = 10
+window-padding-balance = true
 
 cursor-style = bar
+cursor-style-blink = false
+
+minimum-contrast = 1.1
 
 clipboard-read = allow
 clipboard-write = allow
