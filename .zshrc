@@ -12,6 +12,20 @@ setopt AUTO_CD
 # Enable vi mode for command line editing
 bindkey -v
 
+# Change cursor shape for vi modes
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    printf '\e[2 q'  # block cursor for normal mode
+  else
+    printf '\e[6 q'  # bar cursor for insert mode
+  fi
+}
+function zle-line-init {
+  printf '\e[6 q'  # bar cursor on new prompt
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
+
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 source ~/.zinit/bin/zinit.zsh
