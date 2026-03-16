@@ -47,6 +47,7 @@ eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
 
@@ -72,10 +73,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 source ~/.sdkman/bin/sdkman-init.sh
-
-fpath=($HOME/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
