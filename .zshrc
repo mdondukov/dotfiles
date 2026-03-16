@@ -68,7 +68,7 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/.sdkman/bin/sdkman-init.sh
 
-fpath=(/Users/max/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 
@@ -76,3 +76,7 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="$HOME/.local/bin:$PATH"
+
+# The next line updates PATH for Nebius CLI.
+if [ -f "$HOME/.nebius/path.zsh.inc" ]; then source "$HOME/.nebius/path.zsh.inc"; fi
+export PATH="$HOME/.nebius/bin:$PATH"
