@@ -18,6 +18,8 @@ brew "ripgrep"                 # Fast search tool (used in Neovim)
 brew "tree"                    # Directory tree visualization
 brew "zoxide"                  # Smart directory navigation (used in .zshrc)
 brew "zip"                     # Archive utility
+brew "eza"                     # Modern ls replacement (used in .zshrc)
+brew "bat"                     # Modern cat replacement (used in .zshrc)
 
 # ============================================================================
 # Development Tools

@@ -42,6 +42,7 @@ zinit snippet OMZP::kubectx
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
+unalias zi 2>/dev/null  # zinit creates zi alias, conflicts with zoxide interactive
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -58,9 +59,13 @@ if command -v docker &>/dev/null; then
 fi
 
 alias vim='nvim'
+alias cat='bat'
 alias k='kubectl'
 alias d='docker'
-alias ll='ls -lah'
+alias lg='lazygit'
+alias ls="eza --icons"
+alias ll="eza -la --icons"
+alias lt="eza --tree --level=2 --icons"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

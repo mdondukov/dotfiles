@@ -48,7 +48,7 @@ brew bundle
 ```
 
 This installs:
-- CLI tools: `fzf`, `zoxide`, `neovim`, `git`, `curl`
+- CLI tools: `fzf`, `zoxide`, `eza`, `bat`, `ripgrep`, `neovim`, `git`, `curl`
 - Development tools: `kubectl`, `tig`, `stow`
 - Programming languages: Go toolchain, Python (latest via Homebrew), Kotlin (plus Go tooling helpers)
 - Terminal emulators: `ghostty`, `wezterm`
@@ -143,6 +143,21 @@ cd $(find . -type d | fzf --preview='ls -lah {}')
 - **`--preview`**: Shows a live preview as you navigate
 
 If you're not using fzf yet, install it - it will change how you work in the terminal.
+
+### Aliases
+
+Common commands are aliased to modern replacements:
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| `ls` | `eza --icons` | Modern `ls` with file type icons |
+| `ll` | `eza -la --icons` | Detailed listing with icons |
+| `lt` | `eza --tree --level=2 --icons` | Tree view (2 levels deep) |
+| `cat` | `bat` | Syntax-highlighted file viewer |
+| `vim` | `nvim` | Neovim as default editor |
+| `k` | `kubectl` | Kubernetes shorthand |
+| `d` | `docker` | Docker shorthand |
+| `lg` | `lazygit` | Git TUI |
 
 ### Plugins
 
