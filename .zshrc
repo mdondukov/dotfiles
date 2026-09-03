@@ -64,9 +64,9 @@ alias cat='bat'
 alias k='kubectl'
 alias d='docker'
 alias lg='lazygit'
-alias ls="eza --icons"
-alias ll="eza -la --icons"
-alias lt="eza --tree --level=2 --icons"
+alias ls="eza --icons=auto"
+alias ll="eza -la --icons=auto"
+alias lt="eza --tree --level=2 --icons=auto"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
