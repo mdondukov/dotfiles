@@ -27,6 +27,7 @@ brew "bat"                     # Modern cat replacement (used in .zshrc)
 
 # Editor and Git UI
 brew "neovim"                  # Main text editor
+brew "translate-shell"         # `trans` CLI, used by translate.nvim
 brew "tig"                     # Git terminal UI (used in .zshrc)
 brew "stow"                    # Dotfiles management
 
