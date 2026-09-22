@@ -59,14 +59,19 @@ if command -v docker &>/dev/null; then
   source <(docker completion zsh)
 fi
 
-alias vim='nvim'
-alias cat='bat'
-alias k='kubectl'
-alias d='docker'
-alias lg='lazygit'
-alias ls="eza --icons=auto"
-alias ll="eza -la --icons=auto"
-alias lt="eza --tree --level=2 --icons=auto"
+# Claude Code snapshots the interactive shell and carries these aliases into
+# its non-interactive Bash, where eza with no arguments reads paths from an
+# empty stdin and silently prints nothing. Keep the aliases for live sessions only.
+if [[ -z $CLAUDECODE ]]; then
+  alias vim='nvim'
+  alias cat='bat'
+  alias k='kubectl'
+  alias d='docker'
+  alias lg='lazygit'
+  alias ls="eza --icons=auto"
+  alias ll="eza -la --icons=auto"
+  alias lt="eza --tree --level=2 --icons=auto"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
