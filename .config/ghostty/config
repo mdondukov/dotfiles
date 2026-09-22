@@ -1,4 +1,4 @@
-theme = GitHub Dark Default
+theme = light:GitHub Light Default,dark:GitHub Dark Default
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 18.0
