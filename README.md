@@ -155,6 +155,7 @@ Common commands are aliased to modern replacements:
 | `lt` | `eza --tree --level=2 --icons` | Tree view (2 levels deep) |
 | `cat` | `bat` | Syntax-highlighted file viewer |
 | `vim` | `nvim` | Neovim as default editor |
+| `v` | `nvim` | Neovim shorthand |
 | `k` | `kubectl` | Kubernetes shorthand |
 | `d` | `docker` | Docker shorthand |
 | `lg` | `lazygit` | Git TUI |

@@ -64,6 +64,7 @@ fi
 # empty stdin and silently prints nothing. Keep the aliases for live sessions only.
 if [[ -z $CLAUDECODE ]]; then
   alias vim='nvim'
+  alias v='nvim'
   alias cat='bat'
   alias k='kubectl'
   alias d='docker'
