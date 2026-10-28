@@ -4,7 +4,7 @@
 # ============================================================================
 # Taps
 # ============================================================================
-tap "wez/wezterm"
+tap "wezterm/wezterm"
 
 # ============================================================================
 # CLI Tools
@@ -13,6 +13,7 @@ tap "wez/wezterm"
 # Essential CLI utilities
 brew "curl"                    # HTTP client
 brew "fzf"                     # Fuzzy finder (used in .zshrc)
+brew "fd"                      # Fast find alternative (used in Neovim)
 brew "git"                     # Version control (newer than macOS default)
 brew "ripgrep"                 # Fast search tool (used in Neovim)
 brew "tree"                    # Directory tree visualization
@@ -20,6 +21,15 @@ brew "zoxide"                  # Smart directory navigation (used in .zshrc)
 brew "zip"                     # Archive utility
 brew "eza"                     # Modern ls replacement (used in .zshrc)
 brew "bat"                     # Modern cat replacement (used in .zshrc)
+brew "zsh"                     # Shell (newer than macOS default)
+brew "jq"                      # JSON processor
+brew "wget"                    # HTTP downloader
+brew "btop"                    # Resource monitor
+brew "tealdeer"                # `tldr` command examples
+brew "glow"                    # Markdown renderer for the terminal
+brew "csvlens"                 # CSV viewer
+brew "yazi"                    # Terminal file manager
+brew "age"                     # File encryption
 
 # ============================================================================
 # Development Tools
@@ -30,6 +40,16 @@ brew "neovim"                  # Main text editor
 brew "translate-shell"         # `trans` CLI, used by translate.nvim
 brew "tig"                     # Git terminal UI (used in .zshrc)
 brew "stow"                    # Dotfiles management
+brew "lazygit"                 # Git terminal UI
+
+# Git hosting and history
+brew "gh"                      # GitHub CLI
+brew "glab"                    # GitLab CLI
+brew "git-filter-repo"         # Git history rewriting
+
+# Cloud
+brew "awscli"                  # AWS CLI
+brew "azure-cli"               # Azure CLI
 
 # Kubernetes
 brew "kubernetes-cli"          # kubectl (used in .zshrc)
@@ -57,6 +77,10 @@ brew "golangci-lint"           # Go linter
 brew "graphviz"                # Graph visualization
 brew "imagemagick"             # Image manipulation
 brew "plantuml"                # UML diagrams
+brew "pandoc"                  # Document converter
+brew "poppler"                 # PDF utilities (pdftotext, pdftoppm)
+brew "ghostscript"             # PostScript/PDF interpreter
+brew "tesseract-lang"          # OCR with extra language packs
 
 # ============================================================================
 # GUI Applications (Casks)
